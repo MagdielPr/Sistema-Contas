@@ -1,0 +1,72 @@
+package Sistema;
+import java.util.Scanner;
+
+	public class SistemaContas {
+
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        boolean sair = false;
+
+	        while (!sair) {
+	            int perfil = exibirMenuLogin();
+
+	            switch (perfil) {
+	                case 1:
+	                    if (realizarLogin("admin", "123")) {
+	                        TelaAdmin telaAdmin = new TelaAdmin();
+	                        telaAdmin.exibirMenuAdmin();
+	                    } else {
+	                        System.out.println("Login ou senha incorretos!");
+	                    }
+	                    break;
+	                case 2:
+	                    if (realizarLogin("func", "456")) {
+	                        TelaFuncionario telaFuncionario = new TelaFuncionario();
+	                        telaFuncionario.exibirMenuFuncionario();
+	                    } else {
+	                        System.out.println("Login ou senha incorretos!");
+	                    }
+	                    break;
+	                case 3:
+	                    if (realizarLogin("cli", "789")) {
+	                        TelaCliente telaCliente = new TelaCliente();
+	                        telaCliente.exibirMenuCliente();
+	                    } else {
+	                        System.out.println("Login ou senha incorretos!");
+	                    }
+	                    break;
+	                case 4:
+	                    sair = true;
+	                    System.out.println("Saindo do sistema...");
+	                    break;
+	                default:
+	                    System.out.println("Opção inválida!");
+	                    break;
+	            }
+	        }
+	        scanner.close();
+	    }
+
+	    public static int exibirMenuLogin() {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.println("\nBem-vindo ao Sistema de Contas!");
+	        System.out.println("Escolha o perfil para fazer login:");
+	        System.out.println("1. Admin");
+	        System.out.println("2. Funcionário");
+	        System.out.println("3. Cliente");
+	        System.out.println("4. Sair");
+	        System.out.print("Opção: ");
+	        return scanner.nextInt();
+	    }
+
+	    public static boolean realizarLogin(String usuario, String senha) {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Usuário: ");
+	        String inputUsuario = scanner.nextLine();
+	        System.out.print("Senha: ");
+	        String inputSenha = scanner.nextLine();
+	        return inputUsuario.equals(usuario) && inputSenha.equals(senha);
+	    }
+	    
+	}
