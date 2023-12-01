@@ -1,0 +1,123 @@
+package Sistema;
+import java.util.*;
+import java.sql.*;
+import javax.swing.*;
+
+public class TelaFuncionario {
+
+	public void exibirMenuFuncionario() {
+        Scanner scanner = new Scanner(System.in);
+        boolean voltar = false;
+
+        while (!voltar) {
+            System.out.println("\nMenu do Funcionário:");
+            System.out.println("1. Gerenciamento de Contas");
+            System.out.println("2. Relatórios Gerenciais");
+            System.out.println("3. Voltar ao Menu Principal");
+            System.out.print("Opção: ");
+
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    gerenciamentoContas();
+                    break;
+                case 2:
+                    relatoriosGerenciais();
+                    break;
+                case 3:
+                    voltar = true;
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
+        }
+    }
+
+    private void gerenciamentoContas() {
+    	Scanner scanner = new Scanner(System.in);
+
+        boolean sair = false;
+
+        while (!sair) {
+            System.out.println("\nGerenciamento de Contas:");
+            System.out.println("1. Gerar contas por serviço e mês/ano");
+            System.out.println("2. Vincular contas a clientes");
+            System.out.println("3. Calcular valores e vencimentos");
+            System.out.println("4. Registrar pagamentos");
+            System.out.println("5. Calcular multas por atraso");
+            System.out.println("6. Aplicar descontos");
+            System.out.println("7. Emitir segunda via");
+            System.out.println("8. Voltar");
+
+            System.out.print("Opção: ");
+            int opcao = scanner.nextInt();
+
+            
+
+            
+switch (opcao) {
+                case 1:
+                    gerarContas();
+                    break;
+                case 2:
+                    vincularContasClientes();
+                    break;
+                case 3:
+                    calcularValoresVencimentos();
+                    break;
+                case 4:
+                    registrarPagamentos();
+                    break;
+                case 5:
+                    calcularMultasAtraso();
+                    break;
+                case 6:
+                    aplicarDescontos();
+                    break;
+                case 7:
+                    emitirSegundaVia();
+                    break;
+                case 8:
+                    sair = true;
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
+        }
+    }
+
+    private void gerarContas() {
+        System.out.println("Simulando a geração de contas por serviço e mês/ano...");
+    }
+
+    private void vincularContasClientes() {
+        System.out.println("Simulando a vinculação de contas a clientes...");
+    }
+
+    private void calcularValoresVencimentos() {
+        System.out.println("Simulando o cálculo de valores e vencimentos...");
+    }
+
+    private void registrarPagamentos() {
+        System.out.println("Simulando o registro de pagamentos...");
+    }
+
+    private void calcularMultasAtraso() {
+        System.out.println("Simulando o cálculo de multas por atraso...");
+    }
+
+    private void aplicarDescontos() {
+        System.out.println("Simulando a aplicação de descontos...");
+    }
+
+    private void emitirSegundaVia() {
+        System.out.println("Simulando a emissão de segunda via...");
+    }
+ 
+    private void relatoriosGerenciais() {
+        System.out.println("Implemente os relatórios gerenciais...");
+    }
+}
