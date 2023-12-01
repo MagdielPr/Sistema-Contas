@@ -1,0 +1,56 @@
+package Sistema;
+import java.util.*;
+import java.sql.*;
+import javax.swing.*;
+
+public class TelaCliente {
+
+	public void exibirMenuCliente() {
+        Scanner scanner = new Scanner(System.in);
+        boolean voltar = false;
+
+        while (!voltar) {
+            System.out.println("\nMenu do Cliente:");
+            System.out.println("1. Pagar Conta");
+            System.out.println("2. Emitir Segunda Via");
+            System.out.println("3. Voltar ao Menu Principal");
+            System.out.print("Opção: ");
+
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    pagarConta();
+                    break;
+                case 2:
+                    emitirSegundaVia();
+                    break;
+                case 3:
+                    voltar = true;
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
+        }
+    }
+
+    private void pagarConta() {
+    	Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nPagamento de Contas:");
+
+        // Simulação de interação para obter informações da conta a ser paga
+        System.out.print("Informe o código da conta: ");
+        int codigoConta = scanner.nextInt();
+        System.out.print("Informe o valor a ser pago: ");
+        double valorPago = scanner.nextDouble();
+
+        // Aqui você pode simular a confirmação do pagamento
+        System.out.println("Pagamento de conta realizado com sucesso!");
+ }
+
+    private void emitirSegundaVia() {
+        System.out.println("Implemente a emissão de segunda via...");
+    }
+}
